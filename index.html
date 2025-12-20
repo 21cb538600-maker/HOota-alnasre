@@ -35,7 +35,7 @@ body{
 }
 
 /* ====== Navbar ====== */
-nav{
+nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -51,17 +51,16 @@ nav{
 }
 
 nav .brand{
-  font-size: 26px; /* تقليل قليلاً من 28px */
+  font-size: 26px;
   font-weight: 900;
   background: linear-gradient(90deg,#f5c16c,#00cfff);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   letter-spacing: 1px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-  white-space: nowrap; /* منع تقسيم النص */
-  overflow: hidden; /* لتجنب أي تجاوز */
+  flex-shrink: 0;  /* يمنع تقلص النص */
+  min-width: 200px; /* يضمن مساحة كافية للنص */
 }
-
 nav a {
   color:#eaeaea;
   margin: 0 18px;
