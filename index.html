@@ -25,9 +25,7 @@
   box-shadow: 0 0 15px #25D366;
   z-index: 1000;
 }
-html {
-  scroll-behavior: smooth;
-}
+
 /* ====== Body ====== */
 body{
   margin:0;
@@ -37,7 +35,7 @@ body{
 }
 
 /* ====== Navbar ====== */
-nav {
+nav{
   position: fixed;
   top: 0;
   left: 0;
@@ -62,7 +60,10 @@ nav .brand{
   text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
   flex-shrink: 0;  /* يمنع تقلص النص */
   min-width: 200px; /* يضمن مساحة كافية للنص */
+  margin-left: 10px; /* تحريك الاسم قليلاً لليسار */
 }
+
+/* روابط Navbar */
 nav a {
   color:#eaeaea;
   margin: 0 18px;
@@ -76,33 +77,11 @@ nav a {
 nav a:hover{
   background:#00cfff;
   color:#000;
-} @media screen and (max-width: 768px) {
-  nav .brand {
-    font-size: 22px; /* تصغير للنص على الشاشات المتوسطة */
-  }
 }
 
-@media screen and (max-width: 480px) {
-  nav .brand {
-    font-size: 20px; /* تصغير أكبر للهواتف */
-  }
-}
-@media screen and (max-width: 768px) {
-  nav .brand {
-    font-size: 22px;
-    min-width: 180px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  nav .brand {
-    font-size: 20px;
-    min-width: 160px;
-  }
-}
 /* ====== Container ====== */
 .container{
-  padding:120px 25px 40px; /* padding-top أكبر لتجنب تغطية navbar */
+  padding:120px 25px 40px;
   animation:fade 0.6s ease;
 }
 
@@ -223,7 +202,7 @@ nav a:hover{
 }
 
 /* ====== Inputs ====== */
-input {
+input, textarea {
   width: 100%;
   padding: 14px;
   margin: 12px 0;
@@ -310,15 +289,18 @@ footer{
     padding: 12px 30px;
   }
 }
+
+/* ====== Smooth Scroll ====== */
+html {
+  scroll-behavior: smooth;
+}
 </style>
 </head>
 
 <body>
 
-<!-- Whatsapp Button -->
 <a href="https://wa.me/249900623733" target="_blank" class="whatsapp">💬</a>
 
-<!-- Navbar -->
 <nav>
   <div class="brand">HOota O Black</div>
   <div>
@@ -382,6 +364,17 @@ footer{
     <div class="grid">
       <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
     </div>
+  </div>
+</div>
+
+<!-- قسم تواصل معنا -->
+<div id="contact" class="container section">
+  <h2>تواصل معنا</h2>
+  <div class="lesson-box">
+    <input type="text" placeholder="اسمك الكامل">
+    <input type="email" placeholder="البريد الإلكتروني">
+    <textarea placeholder="رسالتك"></textarea>
+    <button class="btn">إرسال</button>
   </div>
 </div>
 
