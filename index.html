@@ -43,7 +43,7 @@ nav{
   background: rgba(0,0,0,0.9);
   padding: 15px 40px;
   display: flex;
-  justify-content: space-between; /* الاسم على اليسار، الروابط على اليمين */
+  justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(10px);
   border-bottom:1px solid #1f2933;
@@ -399,28 +399,112 @@ html {
 </footer>
 
 <script>
-// ====== الدروس الطويلة جدا (200 سطر تقريبا لكل درس) ======
+// ====== الدروس الموسعة مع الأكواد ======
 const lessons = {
-  1: { title:"HTML – لغة بناء هيكل المواقع", content:`
-HTML هي حجر الأساس لأي موقع ويب، وهي المسؤولة عن إنشاء هيكل الصفحة وتنظيم المحتوى.
-[... أضف هنا شرح مفصل وطويل جدًا، أمثلة، تعليمات، قوائم، جداول، نماذج...] 
-يمكنك نسخ الشيفرات، تجربة الأكواد، تعلم الأخطاء الشائعة وتصحيحها...
+  1: { title:"HTML – أساسيات بناء المواقع", content:`HTML هي حجر الأساس لأي موقع ويب، وتستخدم لإنشاء هيكل الصفحات وتنظيم المحتوى. 
+<p>في هذا الدرس سنتعلم كل شيء من البداية حتى الاحتراف.</p>
+
+<h3>1. الهيكل الأساسي للصفحة</h3>
+<p>كل صفحة HTML تبدأ بالهيكل التالي:</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ar"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;موقعي الأول&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;مرحبا بك&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3>2. العناوين والفقرات</h3>
+<p>HTML تحتوي على 6 مستويات للعناوين h1-h6:</p>
+<pre>
+&lt;h1&gt;عنوان رئيسي&lt;/h1&gt;
+&lt;h2&gt;عنوان فرعي&lt;/h2&gt;
+&lt;p&gt;هذه فقرة نصية&lt;/p&gt;
+</pre>
+
+<h3>3. القوائم</h3>
+<p>قوائم غير مرتبة ومرتبة:</p>
+<pre>
+&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;الخطوة الأولى&lt;/li&gt;
+  &lt;li&gt;الخطوة الثانية&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+
+<h3>4. الروابط</h3>
+<p>إضافة الروابط:</p>
+<pre>
+&lt;a href="https://www.google.com" target="_blank"&gt;اذهب إلى جوجل&lt;/a&gt;
+</pre>
+
+<h3>5. الصور</h3>
+<pre>
+&lt;img src="logo.png" alt="شعار الموقع" width="200"&gt;
+</pre>
+
+<h3>6. النصوص والتنسيقات</h3>
+<p>&lt;strong&gt;لجعل النص عريض&lt;/strong>, &lt;em&gt;لجعل النص مائل&lt;/em>.</p>
+
+<h3>7. الجداول</h3>
+<pre>
+&lt;table border="1"&gt;
+  &lt;tr&gt;&lt;th&gt;الاسم&lt;/th&gt;&lt;th&gt;العمر&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;أحمد&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<h3>8. النماذج (Forms)</h3>
+<pre>
+&lt;form action="/submit" method="post"&gt;
+  &lt;label&gt;الاسم:&lt;/label&gt;
+  &lt;input type="text" name="name"&gt;
+  &lt;button type="submit"&gt;إرسال&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+<h3>9. الفيديوهات والصوتيات</h3>
+<pre>
+&lt;video controls width="400"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mp3"&gt;
+&lt;/audio&gt;
+</pre>
+
+<h3>10. أفضل الممارسات</h3>
+<ul>
+<li>تنظيم الصفحة باستخدام div و span</li>
+<li>استخدام التعليقات لتوضيح الأكواد</li>
+<li>حفظ الملفات بامتداد .html</li>
+<li>استخدام أسماء وصفية للعناصر</li>
+<li>تجربة الشيفرات عمليًا في المتصفح</li>
+<li>التحقق من الأخطاء باستخدام أدوات المطور</li>
+<li>الاستمرار في الممارسة اليومية</li>
+<li>تطبيق كل درس عمليًا قبل الانتقال للدرس التالي</li>
+<li>تخصيص الألوان والخطوط لتحسين القراءة</li>
+<li>إضافة ملاحظات خاصة بك لتسهيل المراجعة</li>
+<!-- يمكن تكرار هذه الفقرات والأمثلة حتى الوصول إلى 200 سطر نصي -->
+</ul>
+
+<p>يمكنك الآن تجربة نسخ الأكواد، تعديلها، إضافة عناصر جديدة، وإنشاء صفحة متكاملة من الصفر.</p>
+<p>استمر في تعلم HTML خطوة بخطوة وستتمكن من إنشاء مواقع احترافية.</p>
+<p>تكرار الشرح، الأمثلة، والتطبيق العملي سيجعل تعلمك أسرع وأكثر فاعلية.</p>
 `},
-  2: { title:"CSS – تصميم وتنسيق المواقع", content:`
-CSS تمنح موقعك الجمال والحياة...
-[... أضف هنا محتوى طويل جدا، أمثلة Flexbox و Grid، ألوان، خطوط، تأثيرات Hover...] 
-تعلم كيفية إنشاء تصاميم متجاوبة وواجهات جذابة للمستخدم.
-`},
-  3: { title:"JavaScript – التفاعل والذكاء", content:`
-JavaScript تضيف التفاعل والحياة للموقع...
-[... أضف هنا محتوى طويل جدا، أمثلة Events، DOM، Functions، Loops...] 
-يمكنك بناء تفاعلات قوية للمستخدم، التحقق من النماذج، والتحكم في العناصر ديناميكيًا.
-`},
-  4: { title:"مشروع تطبيقي متكامل", content:`
-مشروع تطبيقي متكامل من الصفر...
-[... أضف هنا محتوى طويل جدا، يدمج HTML و CSS و JS في مشروع كامل...] 
-بعد إتمام هذا الدرس، ستكون قادرًا على بناء موقع متكامل جاهز للنشر.
-`}
+  2: { title:"CSS – التصميم والتنسيق", content:"<p>درس CSS سيكون طويل جدًا...</p>"},
+  3: { title:"JavaScript – التفاعل", content:"<p>درس JavaScript سيكون طويل جدًا...</p>"},
+  4: { title:"مشروع تطبيقي متكامل", content:"<p>مشروع كامل سيجمع HTML و CSS و JS...</p>"}
 };
 
 function hideAll(){
@@ -431,21 +515,4 @@ function hideAll(){
 
 function showHome(){
   hideAll();
-  document.getElementById("home").classList.remove("hidden");
-}
-
-function showCourse(){
-  hideAll();
-  document.getElementById("course").classList.remove("hidden");
-}
-
-function openLesson(num){
-  document.getElementById("lessonTitle").innerText = lessons[num].title;
-  document.getElementById("lessonContent").innerText = lessons[num].content;
-  hideAll();
-  document.getElementById("lesson").classList.remove("hidden");
-}
-</script>
-
-</body>
-</html>
+  document.getElementById("home").classList.remove
