@@ -1,87 +1,81 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head> <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<head>
 <meta charset="UTF-8">
 <title>HOota O Black Academy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<a href="https://wa.me/249900623733" target="_blank" class="whatsapp">💬</a>
 <style>
-.whatsapp{
-  nav {
-  position: fixed; /* يظل مثبت أثناء التمرير */
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.9); /* داكن وشفاف قليلاً */
-  padding: 15px 40px;
+/* ====== Whatsapp Button ====== */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #1f2933;
-  z-index: 9999; /* لضمان ظهوره فوق كل العناصر */
-}
-
-nav a {
-  color: #eaeaea; /* نص فاتح وواضح */
-  margin: 0 18px;
+  justify-content: center;
+  font-size: 30px;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 20px; /* تكبير النص */
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.3s;
+  box-shadow: 0 0 15px #25D366;
+  z-index: 1000;
 }
 
-nav a:hover {
-  background: #00cfff;
-  color: #000;
-}
-<style>
+/* ====== Body ====== */
 body{
   margin:0;
   font-family:'Cairo', sans-serif;
-  background:linear-gradient(180deg,#05070d,#0b0f1a);
+  background: linear-gradient(180deg,#05070d,#0b0f1a);
   color:#eaeaea;
 }
 
 /* ====== Navbar ====== */
 nav{
-  background:rgba(0,0,0,0.85);
-  padding:18px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  backdrop-filter:blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.9);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
   border-bottom:1px solid #1f2933;
+  z-index: 9999;
 }
 
-/* اسم الأكاديمية */
-.brand{
+nav .brand{
   font-size:26px;
   font-weight:800;
   background:linear-gradient(90deg,#f5c16c,#00cfff);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  letter-spacing:1px;
 }
 
-/* روابط */
 nav a {
-  color: #ddd;
-  margin: 12px;
+  color:#eaeaea;
+  margin: 0 18px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 18px; /* تكبير الروابط */
-  transition: 0.3s;
+  font-weight:700;
+  font-size:20px;
+  padding: 8px 12px;
+  border-radius:8px;
+  transition:0.3s;
 }
-nav a:hover {
-  color: #00cfff;
+nav a:hover{
+  background:#00cfff;
+  color:#000;
 }
+
 /* ====== Container ====== */
 .container{
-  padding:40px 25px;
+  padding:100px 25px 40px; /* padding top أكبر لأن navbar ثابت */
   animation:fade 0.6s ease;
 }
 
@@ -114,13 +108,13 @@ nav a:hover {
 
 /* ====== Buttons ====== */
 .btn {
-  background: linear-gradient(90deg,#f5c16c,#ff9f1c); /* ألوان أكثر وضوحًا */
+  background: linear-gradient(90deg,#f5c16c,#ff9f1c);
   color: #000;
-  padding: 18px 50px; /* زيادة الحجم */
+  padding: 18px 50px;
   border: none;
   border-radius: 40px;
   font-weight: 800;
-  font-size: 22px; /* تكبير الخط */
+  font-size: 22px;
   cursor: pointer;
   margin-top: 30px;
   transition: 0.3s;
@@ -131,6 +125,7 @@ nav a:hover {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 15px 40px rgba(245,193,108,0.5);
 }
+
 /* ====== Sections ====== */
 .section{
   margin-top:70px;
@@ -154,43 +149,68 @@ nav a:hover {
   background: linear-gradient(180deg,#0e1322,#0a0f1d);
   margin: 18px;
   padding: 30px;
-  width: 280px; /* تكبير قليل */
+  width: 280px;
   border-radius: 18px;
   cursor: pointer;
   transition: 0.35s;
   border: 1px solid #1f2933;
-  color: #eaeaea; /* نص واضح */
+  color: #eaeaea;
   font-weight: 600;
-  font-size: 18px; /* تكبير النص */
+  font-size: 18px;
 }
 
 .card:hover {
   box-shadow: 0 0 30px rgba(0,207,255,0.4);
   transform: translateY(-8px);
-  color: #00cfff; /* تغيير اللون عند المرور */
+  color: #00cfff;
 }
 
 /* ====== Lesson ====== */
 .hidden{display:none;}
 
 .lesson-box {
-  background: #0e1322; /* خلفية داكنة */
-  padding: 35px;
+  background: #0e1322;
+  padding: 40px;
   border-radius: 18px;
-  line-height: 2;
-  border: 1px solid #1f2933;
-  color: #eaeaea; /* نص فاتح وواضح */
-  font-size: 18px; /* تكبير الخط */
+  line-height: 1.8;
+  border:1px solid #1f2933;
+  color:#e0e0e0;
+  font-size:18px;
 }
 
 .lesson-box h2 {
-  color: #f5c16c; /* عنوان واضح وجذاب */
-  margin-bottom: 15px;
+  color: #f5c16c;
+  font-size:28px;
+  margin-bottom:20px;
 }
 
-.lesson-box p {
-  color: #e0e0e0;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+.lesson-box h3 {
+  color: #00cfff;
+  font-size:22px;
+  margin-top:20px;
+}
+
+.lesson-box p, .lesson-box li {
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+/* ====== Inputs ====== */
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: none;
+  font-size:16px;
+}
+
+/* ====== Iframe Video ====== */
+iframe {
+  width: 100%;
+  height: 300px;
+  border-radius:12px;
+  border:none;
 }
 
 /* ====== Footer ====== */
@@ -198,16 +218,20 @@ footer{
   text-align:center;
   padding:25px;
   background:#000;
-  margin-top:80px;
   color:#888;
   font-size:15px;
+  margin-top:80px;
 }
-</style>
+
 </style>
 </head>
 
 <body>
 
+<!-- Whatsapp Button -->
+<a href="https://wa.me/249900623733" target="_blank" class="whatsapp">💬</a>
+
+<!-- Navbar -->
 <nav>
   <div class="brand">HOota O Black</div>
   <div>
@@ -227,32 +251,15 @@ footer{
   </div>
 
   <div class="section">
-  <h2>سجل الآن في الأكاديمية</h2>
-  <div class="lesson-box">
-    <input placeholder="اسمك الكامل">
-    <input placeholder="البريد الإلكتروني">
-    <input placeholder="رقم الهاتف">
-    <button class="btn">تسجيل</button>
+    <h2>سجل الآن في الأكاديمية</h2>
+    <div class="lesson-box">
+      <input placeholder="اسمك الكامل">
+      <input placeholder="البريد الإلكتروني">
+      <input placeholder="رقم الهاتف">
+      <button class="btn">تسجيل</button>
+    </div>
   </div>
-</div>
 
-<style>
-input {
-  width: 100%;
-  padding: 14px; /* تكبير قليل */
-  margin: 12px 0;
-  border-radius: 10px;
-  border: none;
-  font-size: 16px; /* تكبير النص داخل الحقول */
-}
-
-iframe {
-  width: 100%; /* عرض كامل للحاوية */
-  height: 300px;
-  border-radius: 12px;
-  border: none;
-}
-</style>
   <div class="section">
     <h2>ماذا ستتعلم في الأكاديمية؟</h2>
     <div class="grid">
@@ -281,19 +288,18 @@ iframe {
   <div class="lesson-box">
     <h2 id="lessonTitle"></h2>
     <p id="lessonContent"></p>
-  </div> <div class="section">
-  <h2>فيديوهات تعليمية</h2>
-  <div class="grid">
-    <iframe width="300" height="200" 
-src="https://www.youtube.com/embed/معرّف_الفيديو"
-allowfullscreen></iframe>
+  </div>
+
+  <div class="section">
+    <h2>فيديوهات تعليمية</h2>
+    <div class="grid">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    </div>
   </div>
 </div>
-</div>
 
+<!-- Footer -->
 <footer>
-© 2025 HOota O Black Academy – جميع الحقوق محفوظة
-</footer> <footer>
   © 2025 HOota O Black Academy – جميع الحقوق محفوظة
   <br>
   <a href="https://www.youtube.com/channel/UCDHo57HZnBCwPB0215yQXlA" 
@@ -307,26 +313,26 @@ allowfullscreen></iframe>
 const lessons = {
   1:{
     title:"HTML – لغة بناء هيكل المواقع",
-    content:`HTML هي حجر الأساس لأي موقع ويب. من خلالها تتعلم كيفية إنشاء هيكل الصفحة، 
+    content:`HTML هي حجر الأساس لأي موقع ويب. من خلالها تتعلم كيفية إنشاء هيكل الصفحة،
     إضافة العناوين، الفقرات، الصور، الروابط، القوائم، النماذج، وتنظيم المحتوى بطريقة صحيحة.
     في هذا القسم ستفهم كيف يفكر المتصفح، وكيف تُبنى الصفحات من الداخل بأسلوب احترافي.`
   },
   2:{
     title:"CSS – تصميم وتنسيق المواقع",
-    content:`CSS هي المسؤولة عن جمال الموقع. ستتعلم التحكم في الألوان، الخطوط، الأحجام، 
-    توزيع العناصر، تصميم الواجهات الحديثة، دعم الشاشات المختلفة، وبناء تصميم متجاوب 
+    content:`CSS هي المسؤولة عن جمال الموقع. ستتعلم التحكم في الألوان، الخطوط، الأحجام،
+    توزيع العناصر، تصميم الواجهات الحديثة، دعم الشاشات المختلفة، وبناء تصميم متجاوب
     يعمل على الهاتف والكمبيوتر باحترافية عالية.`
   },
   3:{
     title:"JavaScript – إضافة التفاعل والذكاء",
-    content:`JavaScript تجعل الموقع حيًّا. ستتعلم التحكم في الأزرار، التنقل بين الصفحات، 
-    إظهار وإخفاء العناصر، التحقق من النماذج، وبناء تفاعلات ذكية تحسّن تجربة المستخدم 
+    content:`JavaScript تجعل الموقع حيًّا. ستتعلم التحكم في الأزرار، التنقل بين الصفحات،
+    إظهار وإخفاء العناصر، التحقق من النماذج، وبناء تفاعلات ذكية تحسّن تجربة المستخدم
     وتجعل موقعك احترافيًا وديناميكيًا.`
   },
   4:{
     title:"مشروع تطبيقي متكامل",
     content:`في هذا الجزء ستطبق كل ما تعلمته عمليًا من خلال إنشاء موقع كامل من الصفر.
-    ستبني الهيكل بـ HTML، تصممه بـ CSS، وتضيف له التفاعل باستخدام JavaScript، 
+    ستبني الهيكل بـ HTML، تصممه بـ CSS، وتضيف له التفاعل باستخدام JavaScript،
     لتخرج بمشروع حقيقي جاهز للنشر وبناء مستقبلك البرمجي.`
   }
 };
