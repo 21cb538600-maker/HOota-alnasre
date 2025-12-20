@@ -15,7 +15,7 @@ body{
 
 nav{
   background:black;
-  padding:15px;
+  padding:15px 25px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -30,6 +30,12 @@ nav a{
 
 .container{
   padding:30px;
+  animation:fade 0.5s ease;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:translateY(15px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 .hero{
@@ -67,7 +73,7 @@ nav a{
   background:#111;
   margin:15px;
   padding:25px;
-  width:250px;
+  width:260px;
   border-radius:15px;
   cursor:pointer;
   transition:0.3s;
@@ -75,7 +81,7 @@ nav a{
 
 .card:hover{
   box-shadow:0 0 20px #00cfff;
-  transform:translateY(-5px);
+  transform:translateY(-6px);
 }
 
 .hidden{
@@ -86,10 +92,12 @@ nav a{
   background:#111;
   padding:30px;
   border-radius:15px;
+  line-height:1.9;
 }
 
 .lesson-box h2{
   color:#00cfff;
+  margin-bottom:15px;
 }
 
 footer{
@@ -107,38 +115,38 @@ footer{
 <nav>
   <div>HOota O Black Academy</div>
   <div>
-    <a href="#" onclick="showHome()">الرئيسية</a>
-    <a href="#" onclick="showCourse()">الكورس</a>
+    <a onclick="showHome()">الرئيسية</a>
+    <a onclick="showCourse()">الكورس</a>
   </div>
 </nav>
 
 <!-- الصفحة الرئيسية -->
 <div id="home" class="container">
   <div class="hero">
-    <h1>تعلم إنشاء المواقع من الصفر</h1>
-    <p>أكاديمية عربية لتعليم HTML و CSS و JavaScript خطوة بخطوة</p>
+    <h1>تعلم إنشاء المواقع من الصفر حتى الاحتراف</h1>
+    <p>أكاديمية عربية متخصصة في تعليم برمجة وتصميم مواقع الويب بطريقة سهلة وعملية</p>
     <button class="btn" onclick="showCourse()">ابدأ الكورس</button>
   </div>
 
   <div class="section">
-    <h2>ماذا ستتعلم؟</h2>
+    <h2>ماذا ستتعلم في الأكاديمية؟</h2>
     <div class="grid">
-      <div class="card">HTML من البداية</div>
-      <div class="card">CSS وتصميم احترافي</div>
-      <div class="card">JavaScript والتفاعل</div>
-      <div class="card">إنشاء موقع كامل</div>
+      <div class="card">HTML – بناء هيكل المواقع</div>
+      <div class="card">CSS – تصميم واجهات احترافية</div>
+      <div class="card">JavaScript – التفاعل والبرمجة</div>
+      <div class="card">مشروع موقع متكامل</div>
     </div>
   </div>
 </div>
 
 <!-- صفحة الكورس -->
 <div id="course" class="container hidden">
-  <h2>كورس إنشاء المواقع</h2>
+  <h2>محتوى الكورس</h2>
   <div class="grid">
-    <div class="card" onclick="openLesson(1)">الدرس 1: ما هو HTML؟</div>
-    <div class="card" onclick="openLesson(2)">الدرس 2: أول صفحة HTML</div>
-    <div class="card" onclick="openLesson(3)">الدرس 3: CSS</div>
-    <div class="card" onclick="openLesson(4)">الدرس 4: JavaScript</div>
+    <div class="card" onclick="openLesson(1)">HTML – أساسيات بناء المواقع</div>
+    <div class="card" onclick="openLesson(2)">CSS – التصميم والتنسيق</div>
+    <div class="card" onclick="openLesson(3)">JavaScript – التفاعل والذكاء</div>
+    <div class="card" onclick="openLesson(4)">مشروع تطبيقي كامل</div>
   </div>
 </div>
 
@@ -158,41 +166,51 @@ footer{
 <script>
 const lessons = {
   1:{
-    title:"ما هو HTML؟",
-    content:"HTML هي لغة بناء صفحات الويب، تُستخدم لإنشاء الهيكل الأساسي للمواقع."
+    title:"HTML – لغة بناء هيكل المواقع",
+    content:`HTML هي حجر الأساس لأي موقع ويب. من خلالها تتعلم كيفية إنشاء هيكل الصفحة، 
+    إضافة العناوين، الفقرات، الصور، الروابط، القوائم، النماذج، وتنظيم المحتوى بطريقة صحيحة.
+    في هذا القسم ستفهم كيف يفكر المتصفح، وكيف تُبنى الصفحات من الداخل بأسلوب احترافي.`
   },
   2:{
-    title:"أول صفحة HTML",
-    content:"في هذا الدرس ستتعلم كيفية إنشاء أول ملف HTML وتشغيله في المتصفح."
+    title:"CSS – تصميم وتنسيق المواقع",
+    content:`CSS هي المسؤولة عن جمال الموقع. ستتعلم التحكم في الألوان، الخطوط، الأحجام، 
+    توزيع العناصر، تصميم الواجهات الحديثة، دعم الشاشات المختلفة، وبناء تصميم متجاوب 
+    يعمل على الهاتف والكمبيوتر باحترافية عالية.`
   },
   3:{
-    title:"CSS والتصميم",
-    content:"CSS تُستخدم لتنسيق الألوان والخطوط وتحويل الصفحة إلى تصميم احترافي."
+    title:"JavaScript – إضافة التفاعل والذكاء",
+    content:`JavaScript تجعل الموقع حيًّا. ستتعلم التحكم في الأزرار، التنقل بين الصفحات، 
+    إظهار وإخفاء العناصر، التحقق من النماذج، وبناء تفاعلات ذكية تحسّن تجربة المستخدم 
+    وتجعل موقعك احترافيًا وديناميكيًا.`
   },
   4:{
-    title:"JavaScript",
-    content:"JavaScript تضيف التفاعل للموقع مثل الأزرار والنماذج والتنقل."
+    title:"مشروع تطبيقي متكامل",
+    content:`في هذا الجزء ستطبق كل ما تعلمته عمليًا من خلال إنشاء موقع كامل من الصفر.
+    ستبني الهيكل بـ HTML، تصممه بـ CSS، وتضيف له التفاعل باستخدام JavaScript، 
+    لتخرج بمشروع حقيقي جاهز للنشر وبناء مستقبلك البرمجي.`
   }
 };
 
-function showHome(){
-  document.getElementById("home").classList.remove("hidden");
+function hideAll(){
+  document.getElementById("home").classList.add("hidden");
   document.getElementById("course").classList.add("hidden");
   document.getElementById("lesson").classList.add("hidden");
 }
 
+function showHome(){
+  hideAll();
+  document.getElementById("home").classList.remove("hidden");
+}
+
 function showCourse(){
-  document.getElementById("home").classList.add("hidden");
+  hideAll();
   document.getElementById("course").classList.remove("hidden");
-  document.getElementById("lesson").classList.add("hidden");
 }
 
 function openLesson(num){
   document.getElementById("lessonTitle").innerText = lessons[num].title;
   document.getElementById("lessonContent").innerText = lessons[num].content;
-
-  document.getElementById("home").classList.add("hidden");
-  document.getElementById("course").classList.add("hidden");
+  hideAll();
   document.getElementById("lesson").classList.remove("hidden");
 }
 </script>
