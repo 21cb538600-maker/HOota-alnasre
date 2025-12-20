@@ -85,7 +85,19 @@ nav a:hover{
     font-size: 20px; /* تصغير أكبر للهواتف */
   }
 }
+@media screen and (max-width: 768px) {
+  nav .brand {
+    font-size: 22px;
+    min-width: 180px;
+  }
+}
 
+@media screen and (max-width: 480px) {
+  nav .brand {
+    font-size: 20px;
+    min-width: 160px;
+  }
+}
 /* ====== Container ====== */
 .container{
   padding:120px 25px 40px; /* padding-top أكبر لتجنب تغطية navbar */
