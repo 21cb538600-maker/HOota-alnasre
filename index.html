@@ -43,30 +43,36 @@ nav{
   background: rgba(0,0,0,0.9);
   padding: 15px 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* الاسم على اليسار، الروابط على اليمين */
   align-items: center;
   backdrop-filter: blur(10px);
   border-bottom:1px solid #1f2933;
   z-index: 9999;
 }
 
-nav .brand{
+/* اسم الموقع على اليسار */
+nav .brand {
   font-size: 26px;
   font-weight: 900;
   background: linear-gradient(90deg,#f5c16c,#00cfff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   letter-spacing: 1px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-  flex-shrink: 0;  /* يمنع تقلص النص */
-  min-width: 200px; /* يضمن مساحة كافية للنص */
-  margin-left: 10px; /* تحريك الاسم قليلاً لليسار */
+  flex-shrink: 0;  
+  min-width: 200px;
+  margin-right: auto; /* الاسم على اليسار */
 }
 
-/* روابط Navbar */
+/* روابط Navbar على اليمين */
+nav div {
+  display: flex;
+  gap: 15px; 
+  justify-content: flex-end;
+}
+
 nav a {
   color:#eaeaea;
-  margin: 0 18px;
   text-decoration: none;
   font-weight:700;
   font-size:20px;
