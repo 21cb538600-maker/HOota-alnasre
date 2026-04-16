@@ -7,26 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* Whatsapp Button */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #25D366;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  text-decoration: none;
-  box-shadow: 0 0 15px #25D366;
-  z-index: 1000;
-}
-
-/* Body */
 body{
   margin:0;
   font-family:'Cairo', sans-serif;
@@ -34,742 +14,194 @@ body{
   color:#eaeaea;
 }
 
-/* Navbar */
-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.9);
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid #1f2933;
-  z-index: 9999;
-}
+.container{padding:100px 20px; text-align:center}
 
-nav .brand {
-  font-size: 26px;
-  font-weight: 900;
-  background: linear-gradient(90deg,#f5c16c,#00cfff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-  flex-shrink: 0;  
-  min-width: 200px;
-  margin-right: auto;
-}
+.hidden{display:none}
 
-nav div {
-  display: flex;
-  gap: 15px; 
-  justify-content: flex-end;
-}
-
-nav a {
-  color:#eaeaea;
-  text-decoration: none;
-  font-weight:700;
-  font-size:20px;
-  padding: 8px 12px;
-  border-radius:8px;
-  transition:0.3s;
-}
-nav a:hover{
-  background:#00cfff;
-  color:#000;
-}
-
-/* Container */
-.container{
-  padding:120px 25px 40px;
-  animation:fade 0.6s ease;
-}
-
-@keyframes fade{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* Hero */
-.hero{
-  text-align:center;
-  padding:90px 20px;
-}
-
-.hero h1{
-  font-size:52px;
-  font-weight:800;
-  margin-bottom:15px;
-  background:linear-gradient(90deg,#f5c16c,#00cfff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-  font-size:20px;
-  color:#bfc7d5;
-  max-width:700px;
-  margin:auto;
-}
-
-/* Buttons */
-.btn {
-  background: linear-gradient(90deg,#f5c16c,#ff9f1c);
-  color: #000;
-  padding: 18px 50px;
-  border: none;
-  border-radius: 40px;
-  font-weight: 800;
-  font-size: 22px;
-  cursor: pointer;
-  margin-top: 30px;
-  transition: 0.3s;
-  box-shadow: 0 10px 30px rgba(245,193,108,0.3);
-}
-
-.btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(245,193,108,0.5);
-}
-
-/* Sections */
-.section{
-  margin-top:70px;
-  text-align:center;
-}
-
-.section h2{
-  font-size:32px;
-  margin-bottom:30px;
-  color:#00cfff;
-}
-
-/* Grid & Cards */
-.grid{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.card {
-  background: linear-gradient(180deg,#0e1322,#0a0f1d);
-  margin: 18px;
-  padding: 30px;
-  width: 280px;
-  border-radius: 18px;
-  cursor: pointer;
-  transition: 0.35s;
-  border: 1px solid #1f2933;
-  color: #eaeaea;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-.card:hover {
-  box-shadow: 0 0 30px rgba(0,207,255,0.4);
-  transform: translateY(-8px);
-  color: #00cfff;
-}
-
-/* Lesson Box */
-.hidden{display:none;}
-
-.lesson-box {
-  background: #0e1322;
-  padding: 40px;
-  border-radius: 18px;
-  line-height: 1.8;
-  border:1px solid #1f2933;
-  color:#e0e0e0;
-  font-size:18px;
-  text-align:right;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-.lesson-box h2 {
-  color: #f5c16c;
-  font-size:28px;
-  margin-bottom:20px;
-}
-
-.lesson-box h3 {
-  color: #00cfff;
-  font-size:22px;
-  margin-top:20px;
-}
-
-.lesson-box p, .lesson-box li {
-  font-size:18px;
-  margin-bottom:10px;
-}
-
-/* Inputs */
-input, textarea {
-  width: 100%;
-  padding: 14px;
-  margin: 12px 0;
-  border-radius: 10px;
-  border: none;
-  font-size:16px;
-}
-
-/* Iframe Video */
-iframe {
-  width: 100%;
-  height: 300px;
-  border-radius:12px;
+input{
+  width:90%;
+  padding:12px;
+  margin:10px;
+  border-radius:10px;
   border:none;
 }
 
-/* Footer */
-footer{
-  text-align:center;
-  padding:25px;
+.btn{
+  background:#00cfff;
+  color:#000;
+  padding:12px 25px;
+  border:none;
+  border-radius:20px;
+  font-weight:bold;
+  cursor:pointer;
+  margin:5px;
+}
+
+.card{
+  background:#0e1322;
+  padding:20px;
+  margin:10px auto;
+  width:300px;
+  border-radius:15px;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
   background:#000;
-  color:#888;
-  font-size:15px;
-  margin-top:80px;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-  nav {
-    padding: 12px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav a {
-    margin: 6px 0;
-    font-size: 18px;
-  }
-  .hero h1 { font-size: 36px; }
-  .hero p { font-size: 16px; }
-  .btn { font-size: 18px; padding: 14px 35px; }
-  .card { width: 90%; font-size: 16px; padding: 20px; }
-  .lesson-box { padding: 25px; font-size: 16px; }
-  iframe { height: 200px; }
-}
-@media screen and (max-width: 480px) {
-  .hero h1 { font-size: 28px; }
-  .hero p { font-size: 14px; }
-  nav a { font-size: 16px; }
-  .btn { font-size: 16px; padding: 12px 30px; }
-}
-
-/* Smooth Scroll */
-html { scroll-behavior: smooth; }
+a{color:#fff; cursor:pointer}
 </style>
 </head>
 
 <body>
 
-<a href="https://wa.me/249900623733" target="_blank" class="whatsapp">💬</a>
-
 <nav>
-  <div class="brand">HOota O Black</div>
-  <div>
-    <a onclick="showHome()">الرئيسية</a>
-    <a onclick="showCourse()">الكورس</a>
-    <a href="https://www.youtube.com/channel/UCDHo57HZnBCwPB0215yQXlA" target="_blank">يوتيوب</a>
-    <a href="#contact" onclick="scrollToContact()">تواصل معنا</a>
+  <div>HOota Academy</div>
+  <div id="navUser" class="hidden">
+    <span id="userEmail"></span>
+    <button class="btn" onclick="logout()">خروج</button>
   </div>
 </nav>
 
-<!-- الصفحة الرئيسية -->
-<div id="home" class="container">
-  <div class="hero">
-    <h1>تعلم إنشاء المواقع من الصفر حتى الاحتراف</h1>
-    <p>أكاديمية عربية متخصصة في تعليم برمجة وتصميم مواقع الويب بطريقة سهلة وعملية</p>
-    <button class="btn" onclick="showCourse()">ابدأ الكورس</button>
+<!-- LOGIN / REGISTER -->
+<div id="auth" class="container">
+
+  <h2>تسجيل / دخول</h2>
+
+  <div class="card">
+    <h3>إنشاء حساب</h3>
+    <input id="regName" placeholder="الاسم">
+    <input id="regEmail" placeholder="الإيميل">
+    <input id="regPhone" placeholder="رقم الهاتف">
+    <input id="regPass" type="password" placeholder="كلمة المرور">
+    <button class="btn" onclick="register()">تسجيل</button>
   </div>
 
-  <div class="section">
-    <h2>سجل الآن في الأكاديمية</h2>
-    <div class="lesson-box">
-      <input placeholder="اسمك الكامل">
-      <input placeholder="البريد الإلكتروني">
-      <input placeholder="رقم الهاتف">
-      <button class="btn">تسجيل</button>
-    </div>
+  <div class="card">
+    <h3>تسجيل الدخول</h3>
+    <input id="logEmail" placeholder="الإيميل">
+    <input id="logPass" type="password" placeholder="كلمة المرور">
+    <button class="btn" onclick="login()">دخول</button>
   </div>
 
-  <div class="section">
-    <h2>ماذا ستتعلم في الأكاديمية؟</h2>
-    <div class="grid">
-      <div class="card" onclick="openLesson(1)">HTML – بناء هيكل المواقع</div>
-      <div class="card" onclick="openLesson(2)">CSS – تصميم واجهات احترافية</div>
-      <div class="card" onclick="openLesson(3)">JavaScript – التفاعل والبرمجة</div>
-      <div class="card" onclick="openLesson(4)">مشروع موقع متكامل</div>
-    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="container hidden">
+  <h2>🎓 لوحة التحكم</h2>
+
+  <p>مرحباً بك في الأكاديمية</p>
+
+  <div class="card">
+    <h3>الدروس</h3>
+    <p>HTML - CSS - JavaScript</p>
   </div>
 </div>
 
-<!-- صفحة الكورس -->
-<div id="course" class="container hidden">
-  <h2>محتوى الكورس</h2>
-  <div class="grid">
-    <div class="card" onclick="openLesson(1)">HTML – أساسيات بناء المواقع</div>
-    <div class="card" onclick="openLesson(2)">CSS – التصميم والتنسيق</div>
-    <div class="card" onclick="openLesson(3)">JavaScript – التفاعل والذكاء</div>
-    <div class="card" onclick="openLesson(4)">مشروع تطبيقي كامل</div>
-  </div>
-</div>
-
-<!-- صفحة الدرس -->
-<div id="lesson" class="container hidden">
-  <button class="btn" onclick="showCourse()">⬅ الرجوع للكورس</button>
-  <div class="lesson-box">
-    <h2 id="lessonTitle"></h2>
-    <div id="lessonContent"></div>
-  </div>
-
-  <div class="section">
-    <h2>فيديوهات تعليمية</h2>
-    <div class="grid">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
-
-<!-- قسم تواصل معنا -->
-<div id="contact" class="container section">
-  <h2>تواصل معنا</h2>
-  <div class="lesson-box">
-    <input type="text" placeholder="اسمك الكامل">
-    <input type="email" placeholder="البريد الإلكتروني">
-    <textarea placeholder="رسالتك"></textarea>
-    <button class="btn">إرسال</button>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer>
-  © 2025 HOota O Black Academy – جميع الحقوق محفوظة
-  <br>
-  <a href="https://www.youtube.com/channel/UCDHo57HZnBCwPB0215yQXlA" 
-     target="_blank" 
-     style="display:inline-block; padding:10px 18px; background:#FF0000; color:white; text-decoration:none; border-radius:6px; font-weight:bold; margin-top:10px;">
-     تابع قناتي على يوتيوب
-  </a>
-</footer>
-
-<script>
-const lessons = {
-  1:{
-  title:"HTML – أساسيات بناء المواقع",
-  content:`
-<h3>ما هي أساسيات لغة HTML؟</h3>
-
-<p>
-لا تكتمل الإجابة على ما هي لغة HTML دون فهم أساسياتها، فهي اللغة التي تُبنى بها
-كل صفحات الويب التي تراها يوميًا. تعتمد HTML على مجموعة من العلامات أو الوسوم
-التي تُستخدم لتنظيم المحتوى وبنائه بطريقة يفهمها المتصفح.
-</p>
-
-<h3>العلامات (Tags)</h3>
-
-<p>
-العلامة في HTML هي كلمة أو اختصار محاطة بعلامتي أصغر من وأكبر من
-&lt; &gt;، وتُستخدم لإخبار المتصفح بكيفية عرض المحتوى.
-</p>
-
-<ul>
-  <li><strong>علامات الفتح والإغلاق:</strong> أغلب عناصر HTML تبدأ بعلامة فتح
-  مثل <code>&lt;p&gt;</code> وتنتهي بعلامة إغلاق
-  <code>&lt;/p&gt;</code>، والمحتوى يوضع بينهما.</li>
-
-  <li><strong>علامات ذاتية الإغلاق:</strong> عناصر لا تحتاج إلى محتوى بداخلها،
-  مثل الصور:
-  <code>&lt;img src="image.jpg"&gt;</code></li>
-</ul>
-
-<h3>هيكل الصفحة الأساسي</h3>
-
-<p>
-كل صفحة HTML لها بنية أساسية ثابتة، تشبه القالب الذي يتم ملؤه بالمحتوى.
-</p>
-
-<ul>
-  <li><code>&lt;html&gt; ... &lt;/html&gt;</code>  
-  هي العلامة الأم التي تحتوي على كل عناصر الصفحة.</li>
-
-  <li><code>&lt;head&gt; ... &lt;/head&gt;</code>  
-  يحتوي على معلومات لا تظهر للمستخدم مثل عنوان الصفحة وملفات CSS.</li>
-
-  <li><code>&lt;body&gt; ... &lt;/body&gt;</code>  
-  يحتوي على كل المحتوى المرئي مثل النصوص، الصور، الأزرار، والقوائم.</li>
-</ul>
-
-<h3>أشهر العلامات المستخدمة</h3>
-
-<ul>
-  <li><code>&lt;h1&gt;</code> إلى <code>&lt;h6&gt;</code> لإنشاء العناوين.</li>
-  <li><code>&lt;p&gt;</code> لإنشاء الفقرات النصية.</li>
-  <li><code>&lt;a&gt;</code> لإنشاء الروابط التشعبية.</li>
-  <li><code>&lt;img&gt;</code> لإضافة الصور.</li>
-</ul>
-
-<h3>مميزات لغة HTML</h3>
-
-<ul>
-  <li>سهلة التعلم والتطبيق.</li>
-  <li>تعمل على جميع أنظمة التشغيل.</li>
-  <li>مدعومة من جميع المتصفحات.</li>
-  <li>سريعة التحميل.</li>
-  <li>تتكامل بسهولة مع CSS و JavaScript.</li>
-  <li>تتعامل مع الأخطاء البسيطة دون توقف الصفحة.</li>
-</ul>
-
-<h3>عيوب لغة HTML</h3>
-
-<ul>
-  <li>تحتاج إلى كتابة أكواد كثيرة لبناء صفحة بسيطة.</li>
-  <li>ضعف ميزات الأمان.</li>
-  <li>لا يمكنها تخزين البيانات أو معالجتها.</li>
-  <li>لا تدعم البرمجة الكائنية OOP.</li>
-</ul>
-
-<h3>هل يمكن إنشاء موقع بدون HTML؟</h3>
-
-<p>
-من الناحية التقنية لا يمكن إنشاء موقع ويب بدون HTML، لأنها اللغة الوحيدة
-التي يفهمها المتصفح. أي أدوات إنشاء مواقع بدون كود تقوم في الخلفية
-بتوليد كود HTML تلقائيًا.
-</p>
-
-<h3>هل HTML لغة برمجة أم لغة ترميز؟</h3>
-
-<p>
-HTML ليست لغة برمجة، بل لغة ترميز تُستخدم لوصف وبناء هيكل صفحات الويب.
-لا يمكنها تنفيذ عمليات حسابية أو منطقية، وإنما تعمل جنبًا إلى جنب
-مع CSS للتصميم وJavaScript للتفاعل.
-</p>
-
-<h3>مقارنة بين HTML و CSS و JavaScript</h3>
-
-<table border="1" cellpadding="8" style="border-collapse:collapse; width:100%; color:#eaeaea">
-<tr>
-<th>اللغة</th>
-<th>الاستخدام</th>
-<th>الوظيفة</th>
-</tr>
-<tr>
-<td>HTML</td>
-<td>بناء الهيكل</td>
-<td>تنظيم النصوص والصور والروابط</td>
-</tr>
-<tr>
-<td>CSS</td>
-<td>التصميم</td>
-<td>الألوان، الخطوط، التخطيط</td>
-</tr>
-<tr>
-<td>JavaScript</td>
-<td>التفاعل</td>
-<td>الاستجابة، الحسابات، التغيير الديناميكي</td>
-</tr>
-</table>
-
-<h3>الخلاصة</h3>
-
-<p>
-فهم HTML هو البوابة الحقيقية لدخول عالم الويب. بعد تعلم الأساسيات،
-يمكنك الانتقال إلى CSS وJavaScript وبناء مواقع احترافية كاملة.
-ابدأ الآن بكتابة أول سطر HTML وشاهد كيف يتحول النص إلى موقع حقيقي.
-</p>
-`
-},
-  2:{
-  title:"CSS – تصميم وتنسيق صفحات الويب",
-  content:`
-<h2>مقدمة: من الهيكل إلى الجمال</h2>
-
-<p>
-في مقالنا السابق، قمنا ببناء هيكل عظمي متين ومنظم لأول صفحة ويب لنا باستخدام لغة HTML.
-كان لدينا المحتوى والبنية، لكن الصفحة بدت بسيطة وبلا حياة.
-</p>
-
-<p>
-الآن حان الوقت للانتقال من دور <strong>المهندس المعماري</strong> إلى دور
-<strong>مصمم الديكور</strong>.
-سنضيف الألوان، الخطوط، التباعد، والحركة باستخدام لغة CSS.
-</p>
-
-<hr>
-
-<h2>ما هي لغة CSS؟</h2>
-
-<p>
-CSS هي لغة توصيف (وليست لغة برمجة)، ووظيفتها التحكم في المظهر المرئي لعناصر HTML.
-اسمها الكامل هو <strong>Cascading Style Sheets</strong>.
-</p>
-
-<ul>
-  <li><strong>Sheets:</strong> لأنها تُكتب في ملفات مستقلة.</li>
-  <li><strong>Style:</strong> تتحكم في الألوان، الخطوط، التخطيط.</li>
-  <li><strong>Cascading:</strong> القواعد تنساب من العام إلى الخاص.</li>
-</ul>
-
-<p>
-المبدأ الأساسي لـ CSS هو <strong>فصل الهيكل عن التصميم</strong>.
-</p>
-
-<hr>
-
-<h2>لماذا فصل الهيكل عن التصميم مهم؟</h2>
-
-<h3>1️⃣ صيانة أسهل</h3>
-
-<pre><code class="css">
-/* قبل */
-a {
-  color: blue;
-}
-
-/* بعد */
-a {
-  color: green;
-}
-</code></pre>
-
-<p>
-بدل تعديل مئات الصفحات، سطر واحد فقط يغير التصميم في كل الموقع.
-</p>
-
-<h3>2️⃣ كود أنظف</h3>
-
-<p>
-HTML يركز على المحتوى  
-CSS يركز على الشكل  
-النتيجة: كود واضح وسهل القراءة.
-</p>
-
-<h3>3️⃣ أداء أفضل</h3>
-
-<p>
-ملف CSS يتم تخزينه مؤقتًا (Cache) في المتصفح، مما يجعل التنقل أسرع.
-</p>
-
-<hr>
-
-<h2>نبذة تاريخية عن CSS</h2>
-
-<h3>قبل CSS – فوضى التنسيق</h3>
-
-<p>
-كان التنسيق يتم داخل HTML باستخدام وسوم مثل &lt;font&gt; و &lt;center&gt;،
-مما جعل الصيانة كابوسًا.
-</p>
-
-<h3>ولادة CSS</h3>
-
-<p>
-في عام 1996 تم إطلاق CSS1 لحل هذه المشكلة، ثم CSS2 و CSS3 لاحقًا.
-</p>
-
-<h3>CSS3 والتصميم الحديث</h3>
-
-<ul>
-  <li>Media Queries</li>
-  <li>Flexbox</li>
-  <li>Grid</li>
-  <li>Animations</li>
-</ul>
-
-<hr>
-
-<h2>تشريح قاعدة CSS</h2>
-
-<pre><code class="css">
-h2 {
-  color: navy;
-  font-size: 24px;
-}
-</code></pre>
-
-<ul>
-  <li><strong>h2</strong> → المحدد (Selector)</li>
-  <li><strong>color</strong> → خاصية</li>
-  <li><strong>navy</strong> → قيمة</li>
-</ul>
-
-<hr>
-
-<h2>طرق إضافة CSS</h2>
-
-<h3>1️⃣ ملف خارجي (الأفضل)</h3>
-
-<pre><code class="html">
-<link rel="stylesheet" href="style.css">
-</code></pre>
-
-<h3>2️⃣ داخلي</h3>
-
-<pre><code class="html">
-<style>
-  body { background: lightblue; }
-</style>
-</code></pre>
-
-<h3>3️⃣ سطري (غير مُفضل)</h3>
-
-<pre><code class="html">
-<p style="color:red">نص أحمر</p>
-</code></pre>
-
-<hr>
-
-<h2>CSS مع JavaScript – الوضع الليلي</h2>
-
-<pre><code class="css">
-body.dark-mode {
-  background:#222;
-  color:#fff;
-}
-</code></pre>
-
-<pre><code class="js">
-document.body.classList.toggle("dark-mode");
-</code></pre>
-
-<hr>
-
-<h2>مفاهيم أساسية</h2>
-
-<h3>📦 Box Model</h3>
-
-<ul>
-  <li>Content</li>
-  <li>Padding</li>
-  <li>Border</li>
-  <li>Margin</li>
-</ul>
-
-<h3>📍 Position</h3>
-
-<ul>
-  <li>relative</li>
-  <li>absolute</li>
-  <li>fixed</li>
-  <li>sticky</li>
-</ul>
-
-<h3>📱 Responsive Design</h3>
-
-<pre><code class="css">
-@media (min-width:768px){
-  .container {
-    width:80%;
-  }
-}
-</code></pre>
-
-<h3>⚖️ Specificity</h3>
-
-<ol>
-  <li>Inline</li>
-  <li>ID</li>
-  <li>Class</li>
-  <li>Tag</li>
-</ol>
-
-<hr>
-
-<h2>أطر عمل CSS</h2>
-
-<h3>Bootstrap</h3>
-
-<pre><code class="html">
-<button class="btn btn-primary">زر</button>
-</code></pre>
-
-<h3>Tailwind</h3>
-
-<pre><code class="html">
-<button class="bg-blue-500 text-white px-4 py-2 rounded">
-زر
-</button>
-</code></pre>
-
-<h3>Sass</h3>
-
-<pre><code class="scss">
-$main: blue;
-body {
-  color: $main;
-}
-</code></pre>
-
-<hr>
-
-<h2>تطبيق عملي</h2>
-
-<pre><code class="css">
-body {
-  font-family: system-ui;
-  background:#f0f2f5;
-}
-.container {
-  max-width:800px;
-  margin:auto;
-  background:#fff;
-  padding:20px;
-}
-</code></pre>
-
-<hr>
-
-<h2>الخلاصة</h2>
-
-<p>
-لقد أضفت الجمال إلى الهيكل.  
-HTML يبني – CSS يزين – JavaScript يحرّك.
-في الدرس القادم سننتقل إلى JavaScript لإحياء الصفحة.
-</p>
-`
-},
-  3:{
-    title:"JavaScript – بث الحياة في صفحات الويب",
-    content:`<h2>مقدمة: من التمثال إلى الكائن الحي</h2>
-<p>...</p>`
-  },
-  4:{
-    title:"مشروع تطبيقي متكامل",
-    content:`<p>مشروع عملي يجمع HTML وCSS وJS...</p>`
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+import {
+  getFirestore,
+  setDoc,
+  doc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+
+// 🔥 ضع بيانات Firebase هنا
+const firebaseConfig = {
+  apiKey: "AIzaSyBsvF9J_DneR5H0JbOW4HX_JjVWaajAUgk",
+  authDomain: "website-8833c.firebaseapp.com",
+  projectId: "website-8833c",
+  storageBucket: "website-8833c.firebasestorage.app",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "831801957212"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+
+// 🟢 تسجيل حساب
+window.register = async function(){
+
+  const name = regName.value;
+  const email = regEmail.value;
+  const phone = regPhone.value;
+  const pass = regPass.value;
+
+  try{
+    const userCred = await createUserWithEmailAndPassword(auth, email, pass);
+
+    await setDoc(doc(db,"users", userCred.user.uid),{
+      name, email, phone
+    });
+
+    alert("تم إنشاء الحساب ✅");
+
+  }catch(e){
+    alert(e.message);
   }
 };
 
-function hideAll(){
-  document.getElementById("home").classList.add("hidden");
-  document.getElementById("course").classList.add("hidden");
-  document.getElementById("lesson").classList.add("hidden");
-}
 
-function showHome(){
-  hideAll();
-  document.getElementById("home").classList.remove("hidden");
-}
+// 🟢 تسجيل دخول
+window.login = async function(){
 
-function showCourse(){
-  hideAll();
-  document.getElementById("course").classList.remove("hidden");
-}
+  const email = logEmail.value;
+  const pass = logPass.value;
 
-function openLesson(num){
-  hideAll();
-  document.getElementById("lesson").classList.remove("hidden");
-  document.getElementById("lessonTitle").innerHTML = lessons[num].title;
-  document.getElementById("lessonContent").innerHTML = lessons[num].content;
-}
+  try{
+    await signInWithEmailAndPassword(auth, email, pass);
+    alert("تم تسجيل الدخول ✅");
 
-function scrollToContact(){
-  document.getElementById("contact").scrollIntoView({behavior:"smooth"});
-}
+  }catch(e){
+    alert(e.message);
+  }
+};
+
+
+// 🟢 تسجيل خروج
+window.logout = async function(){
+  await signOut(auth);
+};
+
+
+// 🟢 حالة المستخدم
+onAuthStateChanged(auth, async (user)=>{
+
+  if(user){
+
+    document.getElementById("auth").classList.add("hidden");
+    document.getElementById("dashboard").classList.remove("hidden");
+    document.getElementById("navUser").classList.remove("hidden");
+
+    document.getElementById("userEmail").innerText = user.email;
+
+  }else{
+
+    document.getElementById("auth").classList.remove("hidden");
+    document.getElementById("dashboard").classList.add("hidden");
+    document.getElementById("navUser").classList.add("hidden");
+
+  }
+
+});
+
 </script>
+
 </body>
 </html>
