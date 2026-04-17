@@ -8,209 +8,143 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#020617;
-  --card:#0f172a;
-  --text:#fff;
-  --main:#00cfff;
-}
-
-body.light{
-  --bg:#f1f5f9;
-  --card:#ffffff;
-  --text:#000;
-  --main:#2563eb;
-}
-
 body{
-  margin:0;
-  font-family:'Cairo', sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  transition:0.4s;
+margin:0;
+font-family:'Cairo', sans-serif;
+background:#020617;
+color:#fff;
 }
 
 /* NAV */
 nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 18px;
-  background:var(--bg);
-  border-bottom:1px solid #222;
+display:flex;
+justify-content:space-between;
+padding:12px 18px;
+background:#0a0f1c;
+border-bottom:1px solid #111;
 }
 
 .logo{
-  font-weight:900;
-  color:var(--main);
-}
-
-.nav-right{
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
-
-.btn{
-  border:none;
-  padding:6px 10px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:12px;
-}
-
-.logout{
-  background:#ef4444;
-  color:#fff;
-}
-
-.theme{
-  background:var(--main);
-  color:#000;
+color:#00cfff;
+font-weight:900;
 }
 
 /* AUTH */
 .center{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 .box{
-  width:340px;
-  padding:30px;
-  border-radius:15px;
-  background:var(--card);
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
-  text-align:center;
-  animation:fade 0.5s;
+width:340px;
+padding:30px;
+border-radius:18px;
+background:#0f172a;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+text-align:center;
+animation:fade .4s;
+}
+
+/* INPUT STYLE 3D */
+.input-group{
+position:relative;
+margin:10px 0;
 }
 
 input{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-  border-radius:10px;
-  border:none;
-  background:#1e293b;
-  color:#fff;
+width:100%;
+padding:12px 12px 12px 40px;
+border-radius:12px;
+border:none;
+background:#111c33;
+color:#fff;
+outline:none;
+font-size:14px;
+box-shadow:inset 0 0 0 1px #1f2a44;
 }
 
-body.light input{
-  background:#e2e8f0;
-  color:#000;
+input:focus{
+box-shadow:0 0 0 2px #00cfff;
+}
+
+/* icons */
+.icon{
+position:absolute;
+left:12px;
+top:50%;
+transform:translateY(-50%);
+opacity:0.7;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+transition:.3s;
+font-weight:bold;
+}
+
+button:hover{
+transform:scale(1.03);
 }
 
 .main-btn{
-  width:100%;
-  padding:10px;
-  background:var(--main);
-  border:none;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
+background:#00cfff;
+color:#000;
 }
 
+/* LINK */
 .link{
-  color:var(--main);
-  cursor:pointer;
+color:#00cfff;
+cursor:pointer;
+margin-top:10px;
 }
 
 /* DASHBOARD */
 .dashboard{
-  display:none;
-  padding:20px;
+display:none;
+padding:20px;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-  margin-top:20px;
-  animation:slide 0.6s;
+/* TOAST */
+.toast{
+position:fixed;
+top:20px;
+right:20px;
+background:#111827;
+padding:12px 16px;
+border-radius:10px;
+border:1px solid #1f2937;
+opacity:0;
+transform:translateY(-10px);
+transition:.4s;
+z-index:999;
 }
 
-.card{
-  background:var(--card);
-  border-radius:15px;
-  overflow:hidden;
-  transition:0.3s;
+.toast.show{
+opacity:1;
+transform:translateY(0);
 }
 
-.card:hover{
-  transform:translateY(-5px);
-}
-
-.thumb{
-  height:120px;
-  background:linear-gradient(45deg,var(--main),#6366f1);
-}
-
-.card-body{
-  padding:12px;
-}
-
-.progress{
-  height:6px;
-  background:#333;
-  border-radius:10px;
-  overflow:hidden;
-  margin-top:10px;
-}
-
-.progress div{
-  height:100%;
-  width:0%;
-  background:var(--main);
-  transition:0.4s;
-}
-
-/* COURSE */
-.course{
-  display:none;
-  padding:20px;
-  animation:fade 0.4s;
-}
-
-.back{
-  background:transparent;
-  border:1px solid var(--main);
-  color:var(--main);
-  padding:8px 15px;
-  border-radius:20px;
-  cursor:pointer;
-  margin-bottom:15px;
-}
-
-/* PROFILE */
-.profile{
-  display:none;
-  padding:20px;
-}
-
-/* ANIMATIONS */
+/* ANIMATION */
 @keyframes fade{
-  from{opacity:0}
-  to{opacity:1}
-}
-
-@keyframes slide{
-  from{transform:translateY(20px);opacity:0}
-  to{transform:translateY(0);opacity:1}
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
+<div id="toast" class="toast"></div>
+
 <nav>
 <div class="logo">HOota Academy</div>
-
-<div class="nav-right">
-<button class="btn theme" onclick="toggleTheme()">🌙</button>
-<button id="logoutBtn" class="btn logout">خروج</button>
-</div>
 </nav>
 
 <!-- AUTH -->
@@ -218,19 +152,41 @@ body.light input{
 <div class="box">
 
 <div id="loginBox">
-<h3>Login</h3>
+<h3>تسجيل الدخول</h3>
+
+<div class="input-group">
+<span class="icon">📧</span>
 <input id="logEmail" placeholder="Email">
-<input id="logPass" type="password">
+</div>
+
+<div class="input-group">
+<span class="icon">🔑</span>
+<input id="logPass" type="password" placeholder="Password">
+</div>
+
 <button class="main-btn" onclick="login()">دخول</button>
 <p class="link" onclick="toggleForm()">إنشاء حساب</p>
 </div>
 
 <div id="registerBox" style="display:none">
-<h3>Register</h3>
-<input id="regEmail">
-<input id="regPass" type="password">
-<input id="regPass2" type="password">
-<button class="main-btn" onclick="register()">إنشاء</button>
+<h3>إنشاء حساب</h3>
+
+<div class="input-group">
+<span class="icon">📧</span>
+<input id="regEmail" placeholder="Email">
+</div>
+
+<div class="input-group">
+<span class="icon">🔑</span>
+<input id="regPass" type="password" placeholder="Password">
+</div>
+
+<div class="input-group">
+<span class="icon">🔐</span>
+<input id="regPass2" type="password" placeholder="Confirm Password">
+</div>
+
+<button class="main-btn" onclick="register()">إنشاء الحساب</button>
 <p class="link" onclick="toggleForm()">رجوع</p>
 </div>
 
@@ -239,54 +195,8 @@ body.light input{
 
 <!-- DASHBOARD -->
 <div id="dashboard" class="dashboard">
-
-<h2>🎓 الكورسات</h2>
-
-<button class="main-btn" onclick="openProfile()">👤 Profile</button>
-
-<div class="grid">
-
-<div class="card">
-<div class="thumb"></div>
-<div class="card-body">
-<h3>HTML</h3>
-<button onclick="openCourse('html')">ابدأ</button>
-<div class="progress"><div id="p-html"></div></div>
-</div>
-</div>
-
-<div class="card">
-<div class="thumb"></div>
-<div class="card-body">
-<h3>CSS</h3>
-<button onclick="openCourse('css')">ابدأ</button>
-<div class="progress"><div id="p-css"></div></div>
-</div>
-</div>
-
-<div class="card">
-<div class="thumb"></div>
-<div class="card-body">
-<h3>JS</h3>
-<button onclick="openCourse('js')">ابدأ</button>
-<div class="progress"><div id="p-js"></div></div>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- COURSE -->
-<div id="course" class="course">
-<button class="back" onclick="back()">⬅ رجوع</button>
-<div id="content"></div>
-</div>
-
-<!-- PROFILE -->
-<div id="profile" class="profile">
-<h2>👤 Profile</h2>
-<p id="userEmail"></p>
-<button class="back" onclick="closeProfile()">رجوع</button>
+<h2>🎓 مرحباً بك</h2>
+<button onclick="logout()">خروج</button>
 </div>
 
 <script type="module">
@@ -308,103 +218,61 @@ projectId:"YOUR_ID"
 
 const auth = getAuth(app);
 
-const dashboard = document.getElementById("dashboard");
-const authDiv = document.getElementById("auth");
-const courseDiv = document.getElementById("course");
-const profileDiv = document.getElementById("profile");
-
-const progress = {
-html:0,
-css:0,
-js:0
-};
-
-/* AUTH */
-window.login=async()=>{
-await signInWithEmailAndPassword(auth,logEmail.value,logPass.value);
+/* TOAST */
+function showToast(msg,color="#00cfff"){
+const t=document.getElementById("toast");
+t.innerText=msg;
+t.style.borderColor=color;
+t.classList.add("show");
+setTimeout(()=>t.classList.remove("show"),2500);
 }
 
+/* LOGIN */
+window.login=async()=>{
+try{
+await signInWithEmailAndPassword(auth,logEmail.value,logPass.value);
+showToast("تم تسجيل الدخول بنجاح");
+}catch(e){
+showToast("خطأ في البيانات","red");
+}
+}
+
+/* REGISTER */
 window.register=async()=>{
 if(regPass.value!==regPass2.value){
-alert("كلمة المرور غير متطابقة");
+showToast("كلمات المرور غير متطابقة","red");
 return;
 }
+try{
 await createUserWithEmailAndPassword(auth,regEmail.value,regPass.value);
+showToast("تم إنشاء الحساب بنجاح");
+}catch(e){
+showToast("فشل إنشاء الحساب","red");
+}
 }
 
+/* AUTH STATE */
 onAuthStateChanged(auth,(user)=>{
 if(user){
 authDiv.style.display="none";
 dashboard.style.display="block";
-document.getElementById("userEmail").innerText=user.email;
-loadProgress();
 }else{
 authDiv.style.display="flex";
 dashboard.style.display="none";
 }
 });
 
-/* COURSE */
-window.openCourse=(c)=>{
-dashboard.style.display="none";
-courseDiv.style.display="block";
-
-document.getElementById("content").innerHTML=
-`<h2>${c}</h2><p>محتوى الكورس</p>`;
-
-progress[c]=Math.min((progress[c]||0)+10,100);
-saveProgress();
-updateBars();
-}
-
-/* BACK */
-window.back=()=>{
-courseDiv.style.display="none";
-dashboard.style.display="block";
-}
-
-/* PROFILE */
-window.openProfile=()=>{
-dashboard.style.display="none";
-profileDiv.style.display="block";
-}
-
-window.closeProfile=()=>{
-profileDiv.style.display="none";
-dashboard.style.display="block";
-}
-
-/* PROGRESS */
-function saveProgress(){
-localStorage.setItem("progress",JSON.stringify(progress));
-}
-
-function loadProgress(){
-let data=JSON.parse(localStorage.getItem("progress"));
-if(data) Object.assign(progress,data);
-updateBars();
-}
-
-function updateBars(){
-document.getElementById("p-html").style.width=progress.html+"%";
-document.getElementById("p-css").style.width=progress.css+"%";
-document.getElementById("p-js").style.width=progress.js+"%";
-}
-
-/* THEME */
-window.toggleTheme=()=>{
-document.body.classList.toggle("light");
-}
-
-/* FORM */
+/* TOGGLE FORM */
 window.toggleForm=()=>{
 loginBox.style.display=
 loginBox.style.display==="none"?"block":"none";
+
 registerBox.style.display=
 registerBox.style.display==="none"?"block":"none";
 }
 
-document.getElementById("logoutBtn").onclick=()=>signOut(auth);
+/* LOGOUT */
+window.logout=()=>signOut(auth);
 
 </script>
 
