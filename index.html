@@ -9,154 +9,142 @@
 
 <style>
 body{
-  margin:0;
-  font-family:'Cairo', sans-serif;
-  background: linear-gradient(180deg,#0f172a,#020617);
-  color:#fff;
+margin:0;
+font-family:'Cairo', sans-serif;
+background:linear-gradient(180deg,#0f172a,#020617);
+color:#fff;
 }
 
 /* NAV */
 nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 20px;
-  background:#020617;
-  border-bottom:1px solid #111;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 18px;
+background:#020617;
+border-bottom:1px solid #111;
 }
 
 .logo{
-  font-weight:900;
-  color:#00cfff;
-  font-size:20px;
+color:#00cfff;
+font-weight:900;
 }
 
-/* Logout */
 .logout{
-  background:#ef4444;
-  border:none;
-  padding:6px 12px;
-  border-radius:8px;
-  color:#fff;
-  cursor:pointer;
-  font-size:13px;
-  transition:0.3s;
-}
-
-.logout:hover{
-  transform:scale(1.05);
-  background:#dc2626;
+background:#ef4444;
+border:none;
+padding:6px 12px;
+border-radius:8px;
+color:#fff;
+cursor:pointer;
+display:none; /* 🔥 مهم جداً */
 }
 
 /* AUTH */
 .center{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  animation:fadeIn 0.6s ease;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 .box{
-  background:#020617;
-  padding:35px;
-  border-radius:18px;
-  width:340px;
-  text-align:center;
-  border:1px solid #111;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+width:340px;
+padding:30px;
+background:#0f172a;
+border-radius:15px;
+text-align:center;
 }
 
 input{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border:none;
-  border-radius:10px;
-  background:#0f172a;
-  color:#fff;
-  outline:none;
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:10px;
+border:none;
+background:#1e293b;
+color:#fff;
 }
 
+/* BUTTON */
 button{
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  margin-top:10px;
-  cursor:pointer;
+width:100%;
+padding:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
 }
 
 .btn-main{
-  background:#00cfff;
-  color:#000;
-  font-weight:bold;
-}
-
-.link{
-  cursor:pointer;
-  margin-top:12px;
-  color:#00cfff;
+background:#00cfff;
+color:#000;
+font-weight:bold;
 }
 
 /* DASHBOARD */
 .dashboard{
-  display:none;
-  padding:20px;
+display:none;
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.card{
+background:#0f172a;
+border-radius:15px;
+padding:15px;
+border:1px solid #111;
+}
+
+.thumb{
+height:120px;
+background:linear-gradient(45deg,#00cfff,#6366f1);
+border-radius:10px;
 }
 
 /* COURSE */
 .course{
-  display:none;
-  padding:20px;
-  max-width:900px;
-  margin:auto;
+display:none;
+padding:20px;
+max-width:900px;
+margin:auto;
 }
 
 .back{
-  border:1px solid #00cfff;
-  color:#00cfff;
-  background:transparent;
-  padding:8px 18px;
-  border-radius:25px;
-  cursor:pointer;
-  margin-bottom:20px;
+border:1px solid #00cfff;
+color:#00cfff;
+background:transparent;
+padding:8px 15px;
+border-radius:20px;
+cursor:pointer;
+margin-bottom:15px;
 }
 
-/* ===== TOAST ===== */
+/* TOAST */
 .toast{
-  position:fixed;
-  top:20px;
-  right:20px;
-  min-width:220px;
-  padding:12px 16px;
-  border-radius:12px;
-  background:#111827;
-  color:#fff;
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
-  transform:translateY(-20px);
-  opacity:0;
-  transition:0.4s ease;
-  z-index:9999;
-  border-right:4px solid #00cfff;
-  font-weight:bold;
+position:fixed;
+top:20px;
+right:20px;
+background:#111827;
+padding:10px 14px;
+border-radius:10px;
+opacity:0;
+transition:0.3s;
 }
 
 .toast.show{
-  transform:translateY(0);
-  opacity:1;
+opacity:1;
 }
-
-.toast.success{ border-color:#22c55e; }
-.toast.error{ border-color:#ef4444; }
-.toast.info{ border-color:#00cfff; }
-
 </style>
 </head>
 
 <body>
 
-<!-- TOAST -->
 <div id="toast" class="toast"></div>
 
 <nav>
@@ -173,16 +161,16 @@ button{
 <input id="logEmail" placeholder="Email">
 <input id="logPass" type="password" placeholder="Password">
 <button class="btn-main" onclick="login()">Login</button>
-<p class="link" onclick="showRegister()">إنشاء حساب</p>
+<p style="color:#00cfff;cursor:pointer" onclick="showRegister()">إنشاء حساب</p>
 </div>
 
 <div id="registerBox" style="display:none">
 <h3>Register</h3>
-<input id="regEmail" placeholder="Email">
-<input id="regPass" type="password" placeholder="Password">
-<input id="regPass2" type="password" placeholder="Confirm Password">
+<input id="regEmail">
+<input id="regPass" type="password">
+<input id="regPass2" type="password">
 <button class="btn-main" onclick="register()">Create</button>
-<p class="link" onclick="showLogin()">رجوع</p>
+<p style="color:#00cfff;cursor:pointer" onclick="showLogin()">رجوع</p>
 </div>
 
 </div>
@@ -190,13 +178,51 @@ button{
 
 <!-- DASHBOARD -->
 <div id="dashboard" class="dashboard">
+
 <h2>🎓 الكورسات</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="thumb"></div>
+<h3>HTML Course</h3>
+<p>تعلم HTML من الصفر</p>
+<button onclick="openCourse('HTML')">ابدأ</button>
+</div>
+
+<div class="card">
+<div class="thumb"></div>
+<h3>CSS Course</h3>
+<p>تصميم احترافي</p>
+<button onclick="openCourse('CSS')">ابدأ</button>
+</div>
+
+<div class="card">
+<div class="thumb"></div>
+<h3>JavaScript</h3>
+<p>برمجة تفاعلية</p>
+<button onclick="openCourse('JS')">ابدأ</button>
+</div>
+
+</div>
 </div>
 
 <!-- COURSE -->
 <div id="course" class="course">
-<button class="back" onclick="back()">⬅ الرجوع</button>
+
+<button class="back" onclick="back()">⬅ الرجوع للكورسات</button>
+
 <div id="content"></div>
+
+<!-- 🔥 واتساب (رجعته بشكل جميل) -->
+<div style="margin-top:30px;text-align:center">
+<a href="https://wa.me/249900623733" target="_blank">
+<button class="btn-main" style="width:200px">
+📞 تواصل واتساب
+</button>
+</a>
+</div>
+
 </div>
 
 <script type="module">
@@ -210,9 +236,8 @@ onAuthStateChanged,
 signOut
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-/* 🔥 API KEY (بدون تغيير كما طلبت) */
 const app = initializeApp({
-apiKey:"AIzaSyBsvF9J_DneR5H0JbOW4HX_JjVWaajAUgk",
+apiKey:"AIzaSyBsvF9DneR5H0JbOW4HX_JjVWaajAUgk",
 authDomain:"website-8833c.firebaseapp.com",
 projectId:"website-8833c"
 });
@@ -222,40 +247,37 @@ const auth = getAuth(app);
 const authDiv = document.getElementById("auth");
 const dashboard = document.getElementById("dashboard");
 const courseDiv = document.getElementById("course");
+const logoutBtn = document.getElementById("logoutBtn");
+const toast = document.getElementById("toast");
 
-/* ===== TOAST FUNCTION ===== */
-function showToast(msg,type="info"){
-const t=document.getElementById("toast");
-t.innerText=msg;
-t.className="toast show "+type;
-
-setTimeout(()=>{
-t.classList.remove("show");
-},2500);
+/* TOAST */
+function showToast(msg){
+toast.innerText=msg;
+toast.classList.add("show");
+setTimeout(()=>toast.classList.remove("show"),2000);
 }
 
 /* LOGIN */
 window.login=async()=>{
 try{
 await signInWithEmailAndPassword(auth,logEmail.value,logPass.value);
-showToast("تم تسجيل الدخول بنجاح","success");
+showToast("تم تسجيل الدخول");
 }catch(e){
-showToast("خطأ في البيانات","error");
+showToast("خطأ في البيانات");
 }
 }
 
 /* REGISTER */
 window.register=async()=>{
 if(regPass.value !== regPass2.value){
-showToast("كلمة المرور غير متطابقة","error");
+showToast("كلمات المرور غير متطابقة");
 return;
 }
-
 try{
 await createUserWithEmailAndPassword(auth,regEmail.value,regPass.value);
-showToast("تم إنشاء الحساب بنجاح","success");
+showToast("تم إنشاء الحساب");
 }catch(e){
-showToast("فشل إنشاء الحساب","error");
+showToast("فشل إنشاء الحساب");
 }
 }
 
@@ -264,16 +286,16 @@ onAuthStateChanged(auth,(user)=>{
 if(user){
 authDiv.style.display="none";
 dashboard.style.display="block";
-courseDiv.style.display="none";
-showToast("مرحباً "+user.email,"info");
+logoutBtn.style.display="block"; // 🔥 هنا فقط يظهر
 }else{
 authDiv.style.display="flex";
 dashboard.style.display="none";
 courseDiv.style.display="none";
+logoutBtn.style.display="none";
 }
 });
 
-/* FORM TOGGLE */
+/* FORM */
 window.showRegister=()=>{
 loginBox.style.display="none";
 registerBox.style.display="block";
@@ -288,7 +310,7 @@ loginBox.style.display="block";
 window.openCourse=(name)=>{
 dashboard.style.display="none";
 courseDiv.style.display="block";
-content.innerHTML="<h2>"+name+"</h2><p>محتوى الكورس</p>";
+content.innerHTML="<h2>"+name+" Course</h2><p>محتوى الكورس</p>";
 }
 
 /* BACK */
@@ -300,7 +322,7 @@ dashboard.style.display="block";
 /* LOGOUT */
 logoutBtn.onclick=async()=>{
 await signOut(auth);
-showToast("تم تسجيل الخروج","info");
+showToast("تم تسجيل الخروج");
 }
 
 </script>
