@@ -13,7 +13,9 @@ body{
   font-family:'Cairo', sans-serif;
   background: linear-gradient(180deg,#3b0a6d,#0b0f1a);
   height:100vh;
-  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   color:#fff;
 }
 
@@ -27,26 +29,20 @@ body::before{
   opacity:0.4;
 }
 
-/* NAV */
-nav{
+/* LOGO */
+.logo{
   position:absolute;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:15px 25px;
-  z-index:2;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:22px;
+  font-weight:800;
+  background:linear-gradient(90deg,#fff,#00cfff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
-
-.logo{color:#00cfff;font-weight:800}
 
 /* AUTH */
-.container{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
 .auth-box{
   backdrop-filter: blur(20px);
   background: rgba(255,255,255,0.05);
@@ -55,24 +51,20 @@ nav{
   border-radius:25px;
   width:350px;
   text-align:center;
-  box-shadow:0 0 40px rgba(0,0,0,0.5);
-  animation:fadeIn 0.6s ease;
 }
 
-.input-group{
-  margin:15px 0;
-}
-
-.input-group input{
+/* inputs */
+input{
   width:100%;
   padding:14px;
+  margin:10px 0;
   border:none;
   border-radius:30px;
   background:rgba(255,255,255,0.1);
   color:#fff;
-  outline:none;
 }
 
+/* button */
 .btn{
   width:100%;
   padding:14px;
@@ -82,24 +74,24 @@ nav{
   color:#000;
   font-weight:bold;
   cursor:pointer;
-  transition:0.3s;
 }
-.btn:hover{transform:scale(1.05)}
 
 .link{
   margin-top:15px;
   cursor:pointer;
-  display:block;
 }
 
+/* footer */
 .footer{
-  margin-top:20px;
-  opacity:0.7;
+  margin-top:25px;
+  font-weight:800;
+  font-size:18px;
+  line-height:1.5;
 }
 
-/* DASHBOARD */
+/* dashboard */
 .dashboard{
-  padding:100px 20px;
+  display:none;
   text-align:center;
 }
 
@@ -107,6 +99,7 @@ nav{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
+  padding:40px;
 }
 
 .card{
@@ -114,110 +107,62 @@ nav{
   padding:20px;
   border-radius:15px;
   cursor:pointer;
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-5px);
-  border:1px solid #00cfff;
 }
 
-/* COURSE */
+/* course */
 .course{
+  display:none;
+  padding:40px;
   max-width:900px;
   margin:auto;
-  padding:80px 20px;
-  line-height:1.8;
 }
 
 .back-btn{
   border:1px solid #00cfff;
   color:#00cfff;
-  background:transparent;
-  padding:10px 25px;
-  border-radius:30px;
+  padding:10px 20px;
+  border-radius:20px;
   cursor:pointer;
-  margin-bottom:20px;
-}
-.back-btn:hover{
-  background:#00cfff;
-  color:#000;
 }
 
-/* TOAST */
+/* toast */
 .toast{
   position:fixed;
   top:20px;
   right:20px;
   background:#111;
-  border-left:5px solid #00cfff;
-  padding:15px;
+  padding:10px 20px;
   border-radius:10px;
   opacity:0;
-  transform:translateX(100px);
-  transition:0.4s;
+  transition:0.3s;
 }
-.toast.show{
-  opacity:1;
-  transform:translateX(0);
-}
-
-.hidden{display:none}
-
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px)}
-  to{opacity:1}
-}
+.toast.show{opacity:1}
 </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">HOota Academy</div>
-  <div id="navUser" class="hidden">
-    <span id="userEmail"></span>
-    <button class="btn" onclick="logout()">خروج</button>
-  </div>
-</nav>
+<div class="logo">HOota Academy</div>
 
 <!-- AUTH -->
-<div id="auth" class="container">
+<div id="auth">
 <div class="auth-box">
 
 <div id="loginBox">
 <h2>Login</h2>
-
-<div class="input-group">
-<input id="logEmail" placeholder="Username">
-</div>
-
-<div class="input-group">
+<input id="logEmail" placeholder="Email">
 <input id="logPass" type="password" placeholder="Password">
-</div>
-
 <button class="btn" onclick="login()">Login</button>
-
-<span class="link" onclick="showRegister()">Don't have account? Register</span>
+<p class="link" onclick="showRegister()">Register</p>
 </div>
 
-<div id="registerBox" class="hidden">
+<div id="registerBox" style="display:none">
 <h2>Register</h2>
-
-<div class="input-group">
 <input id="regName" placeholder="Name">
-</div>
-
-<div class="input-group">
 <input id="regEmail" placeholder="Email">
-</div>
-
-<div class="input-group">
-<input id="regPass" type="password" placeholder="Password">
-</div>
-
+<input id="regPass" type="password">
 <button class="btn" onclick="register()">Create</button>
-
-<span class="link" onclick="showLogin()">Back to Login</span>
+<p class="link" onclick="showLogin()">Back</p>
 </div>
 
 <div class="footer">
@@ -228,25 +173,20 @@ nav{
 </div>
 
 <!-- DASHBOARD -->
-<div id="dashboard" class="dashboard hidden">
+<div id="dashboard" class="dashboard">
 <h2>🎓 الكورسات</h2>
 
 <div class="grid">
-<div class="card" onclick="openCourse('html')">HTML</div>
-<div class="card" onclick="openCourse('css')">CSS</div>
-<div class="card" onclick="openCourse('js')">JavaScript</div>
+<div class="card" onclick="openCourse()">HTML</div>
+<div class="card" onclick="openCourse()">CSS</div>
+<div class="card" onclick="openCourse()">JS</div>
 </div>
 </div>
 
 <!-- COURSE -->
-<div id="coursePage" class="hidden">
-<div class="course">
-
-<button class="back-btn" onclick="back()">⬅ رجوع</button>
-
-<div id="courseContent"></div>
-
-</div>
+<div id="course" class="course">
+<button class="back-btn" onclick="back()">رجوع</button>
+<div id="content"></div>
 </div>
 
 <div id="toast" class="toast"></div>
@@ -254,13 +194,7 @@ nav{
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import {
-getAuth,
-createUserWithEmailAndPassword,
-signInWithEmailAndPassword,
-onAuthStateChanged,
-signOut
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyBsvF9J_DneR5H0JbOW4HX_JjVWaajAUgk",
@@ -274,84 +208,59 @@ appId: "1:831801957212:web:707b3c8ac71fb67212bf99"
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Toast
-function showToast(msg){
+// toast
+function toast(msg){
 const t=document.getElementById("toast");
 t.innerText=msg;
 t.classList.add("show");
-setTimeout(()=>t.classList.remove("show"),3000);
+setTimeout(()=>t.classList.remove("show"),2000);
 }
 
-// UI Switch
-window.showRegister=()=>{
-loginBox.classList.add("hidden");
-registerBox.classList.remove("hidden");
-}
+// switch
+window.showRegister=()=>{loginBox.style.display="none";registerBox.style.display="block";}
+window.showLogin=()=>{registerBox.style.display="none";loginBox.style.display="block";}
 
-window.showLogin=()=>{
-registerBox.classList.add("hidden");
-loginBox.classList.remove("hidden");
-}
-
-// Register
+// register
 window.register=async()=>{
 try{
 await createUserWithEmailAndPassword(auth,regEmail.value,regPass.value);
-showToast("تم إنشاء الحساب 🎉");
+toast("تم إنشاء الحساب");
 showLogin();
-}catch(e){showToast(e.message)}
+}catch(e){toast(e.message)}
 }
 
-// Login
+// login
 window.login=async()=>{
 try{
 await signInWithEmailAndPassword(auth,logEmail.value,logPass.value);
-showToast("تم تسجيل الدخول ✅");
-}catch(e){showToast(e.message)}
+toast("تم تسجيل الدخول");
+}catch(e){toast(e.message)}
 }
 
-// Logout
-window.logout=()=>signOut(auth);
-
-// Auth State
+// FIX 🔥
 onAuthStateChanged(auth,(user)=>{
+const authDiv=document.getElementById("auth");
+const dashboard=document.getElementById("dashboard");
+
 if(user){
-authDiv.classList.add("hidden");
-dashboard.classList.remove("hidden");
-navUser.classList.remove("hidden");
-userEmail.innerText=user.email;
+authDiv.style.display="none";
+dashboard.style.display="block";
 }else{
-authDiv.classList.remove("hidden");
-dashboard.classList.add("hidden");
-navUser.classList.add("hidden");
-coursePage.classList.add("hidden");
+authDiv.style.display="block";
+dashboard.style.display="none";
 }
 });
 
-// Courses
-const htmlCourse="<h2>HTML</h2>"+ "<p>تعلم HTML</p>".repeat(200);
-const cssCourse="<h2>CSS</h2>"+ "<p>تعلم CSS</p>".repeat(200);
-const jsCourse="<h2>JS</h2>"+ "<p>تعلم JS</p>".repeat(200);
-
-// Open Course
-window.openCourse=(t)=>{
-if(!auth.currentUser){
-showToast("سجل دخول أول 🔒");
-return;
+// course
+window.openCourse=()=>{
+document.getElementById("dashboard").style.display="none";
+document.getElementById("course").style.display="block";
+content.innerHTML="<h2>كورس</h2>"+"<p>تعلم</p>".repeat(200);
 }
 
-dashboard.classList.add("hidden");
-coursePage.classList.remove("hidden");
-
-if(t==="html") courseContent.innerHTML=htmlCourse;
-if(t==="css") courseContent.innerHTML=cssCourse;
-if(t==="js") courseContent.innerHTML=jsCourse;
-}
-
-// Back
 window.back=()=>{
-coursePage.classList.add("hidden");
-dashboard.classList.remove("hidden");
+document.getElementById("course").style.display="none";
+document.getElementById("dashboard").style.display="block";
 }
 
 </script>
