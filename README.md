@@ -1,36 +1,78 @@
-# Mahmoud Abdallah Academy 🎓
+<div align="center">
 
-منصة تعليمية تفاعلية لعرض الكورسات والتسجيل فيها أونلاين. الهدف من المشروع إظهار مهارات الـ Frontend مع ربط قواعد البيانات السحابية.
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=280&color=gradient&customColorList=6,12,20,25,30&text=Mahmoud%20Abdallah%20Academy&fontSize=70&fontAlignY=35&animation=fadeIn&fontColor=ffffff&desc=Interactive%20Learning%20Platform%20%7C%20Built%20with%20Pure%20Frontend&descAlignY=60&descSize=18"/>
 
-**🔗 المعاينة المباشرة:** https://21cb538600-maker.github.io/mahmoud-abdallah/
+<br/>
 
-### **✨ المميزات الأساسية**
-- **نظام تسجيل وحماية:** تسجيل دخول + إنشاء حساب باستخدام Firebase Authentication
-- **قاعدة بيانات فورية:** حفظ بيانات المستخدمين في Firestore مع حماية بالـ Security Rules
-- **تصميم متجاوب 100%:** شغال على الموبايل والتابلت والديسكتوب بدون مشاكل
-- **كود منظم:** HTML, CSS, JS مفصولين وواضحين
-- **استضافة مجانية:** مرفوع على GitHub Pages مع SSL
+<img src="https://readme-typing-svg.herokuapp.com?font=Cairo&size=24&duration=2500&color=00F5FF&center=true&vCenter=true&width=700&lines=🎓+منصة+تعليمية+احترافية;🚀+Frontend+%2B+Firebase;🔥+Real+World+Project;💡+Learning+by+Building" />
 
-### **🛠️ التقنيات المستخدمة**
-- **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
-- **Backend as a Service:** Firebase Authentication, Cloud Firestore
-- **Deployment:** GitHub Pages
+<br/><br/>
 
-### **📸 لقطات من المشروع**
-<!-- حنضيف الصور الخطوة الجاية -->
-### **📸 لقطات من المشروع**
+<a href="https://21cb538600-maker.github.io/mahmoud-abdallah/">
+  <img src="https://img.shields.io/badge/🚀_Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+</a>
+<a href="https://github.com/21cb538600-maker">
+  <img src="https://img.shields.io/badge/⭐_GitHub_Profile-FFD700?style=for-the-badge&logo=github&logoColor=black"/>
+</a>
 
-<p align="center">
-  <img src="IMG_5225.png" width="100%" alt="الصفحة الرئيسية">
-  <img src="IMG_5226.png" width="32%" alt="تسجيل الدخول"> 
-  <img src="IMG_5227.png" width="32%" alt="لوحة التحكم">
-</p>
+<br/><br/>
 
-### **🎯 اتعلمت شنو من المشروع ده**
-1. ربط موقع ستاتيك بقاعدة بيانات سحابية بدون سيرفر
-2. كتابة Firebase Security Rules لحماية بيانات المستخدمين
-3. عمل Deploy لمشروع فرونت اند على GitHub Pages
-4. بناء واجهة متجاوبة من الصفر بدون فريموورك
+![Visitors](https://komarev.com/ghpvc/?username=21cb538600-maker&style=for-the-badge&color=00f5ff)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-blueviolet?style=for-the-badge)
+![Built With](https://img.shields.io/badge/Built%20With-Firebase-ff9800?style=for-the-badge)
+
+</div>
 
 ---
-**تم التطوير بواسطة:** Mahmoud Abdallah | [لينكد إن](رابط-لينكدإن-بتاعك) | [GitHub](https://github.com/21cb538600-maker)
+
+# 🎓 Mahmoud Abdallah Academy
+
+> منصة تعليمية تفاعلية لعرض الكورسات والتسجيل فيها أونلاين  
+> ⚡ مشروع عملي يوضح قوة الـ Frontend مع Firebase
+
+---
+
+## 🧠 فكرة المشروع
+
+المشروع عبارة عن منصة تعليمية حديثة تتيح للمستخدمين:
+
+- إنشاء حساب  
+- تسجيل الدخول  
+- استكشاف الكورسات  
+- التفاعل مع النظام بسهولة  
+
+💡 الهدف الأساسي:
+> تحويل المعرفة النظرية إلى تطبيق عملي حقيقي
+
+---
+
+## ✨ المميزات الأساسية
+
+- 🔐 **نظام تسجيل متكامل**
+  - تسجيل دخول + إنشاء حساب
+  - باستخدام Firebase Authentication
+
+- 🗄️ **قاعدة بيانات فورية**
+  - تخزين بيانات المستخدمين في Firestore
+  - حماية باستخدام Security Rules
+
+- 📱 **تصميم متجاوب بالكامل**
+  - يعمل على جميع الأجهزة (Mobile / Tablet / Desktop)
+
+- 🧠 **كود نظيف ومنظم**
+  - فصل كامل بين HTML / CSS / JS
+  - سهل القراءة والتطوير
+
+- 🌐 **استضافة مجانية**
+  - GitHub Pages + SSL
+
+---
+
+## 🚀 لماذا هذا المشروع مميز؟
+
+```diff
++ 🔥 مشروع حقيقي (ليس مجرد تمرين)
++ ⚡ يعمل بدون Backend تقليدي
++ 🧠 يعتمد على Firebase BaaS
++ 🎯 يركز على الأداء والبساطة
++ 💡 مبني بدون Frameworks
